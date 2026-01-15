@@ -117,7 +117,7 @@ export default function Home() {
             <div className="absolute inset-0 rounded-full ring-2 ring-white/60 animate-pulse-slow"></div>
           </a>
           <span className="text-xs text-zinc-600 font-mono tracking-tight uppercase">
-            v0.1.0 • Windows PC • 145 MB
+            v0.1.0 • Windows PC • 509 MB
           </span>
         </motion.div>
       </motion.div>
