@@ -106,7 +106,7 @@ export default function Home() {
         >
           <a
             // DEĞİŞİKLİK BURADA: href'e dosya adını yazdık
-            href="/nebula-setup.exe"
+            href="https://github.com/aykublut/nebula-landing/raw/main/public/nebula-setup.exe"
             // İPUCU: 'download' özelliği, tarayıcıya "bunu açma, direkt indir" der
             download="Nebula_Setup_v0.1.0.exe"
             className="group relative flex items-center justify-center gap-3 bg-white text-black font-bold text-lg md:text-xl px-10 py-4 rounded-full transition-all duration-500 hover:scale-105 hover:shadow-[0_0_50px_-10px_rgba(255,255,255,0.5)]"
