@@ -11,6 +11,7 @@ import {
   FileText,
 } from "lucide-react";
 import ChangelogModal from "@/components/ChangeLog";
+import Link from "next/link";
 
 // --- AYARLAR ---
 const transitionConfig = { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const };
@@ -104,18 +105,18 @@ export default function Home() {
           variants={fadeInUp}
           className="flex flex-col items-center gap-4"
         >
-          <a
+          <Link
             // DEĞİŞİKLİK BURADA: href'e dosya adını yazdık
-            href="https://github.com/aykublut/nebula-landing/raw/main/public/nebula-setup.exe"
+            href="https://aykublut.itch.io/nebula"
             // İPUCU: 'download' özelliği, tarayıcıya "bunu açma, direkt indir" der
-            download="Nebula_Setup_v0.1.0.exe"
+
             className="group relative flex items-center justify-center gap-3 bg-white text-black font-bold text-lg md:text-xl px-10 py-4 rounded-full transition-all duration-500 hover:scale-105 hover:shadow-[0_0_50px_-10px_rgba(255,255,255,0.5)]"
           >
             <Download className="w-6 h-6" />
             <span>HEMEN İNDİR</span>
             {/* Buton üzerindeki parlama efekti */}
             <div className="absolute inset-0 rounded-full ring-2 ring-white/60 animate-pulse-slow"></div>
-          </a>
+          </Link>
           <span className="text-xs text-zinc-600 font-mono tracking-tight uppercase">
             v0.1.0 • Windows PC • 509 MB
           </span>
