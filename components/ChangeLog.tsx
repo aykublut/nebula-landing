@@ -124,9 +124,10 @@ export default function ChangelogModal({
               {/* Arka Plan Görseli */}
               <div className="absolute top-0 inset-0 opacity-40 group-hover:opacity-50 transition-opacity duration-1000 pointer-events-none mix-blend-luminosity">
                 <Image
-                  src="/canAsli.png"
+                  src="/canAsliu.png"
                   alt="Season 1 Background"
                   fill
+                  unoptimized
                   className="object-contain object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-slate-900/50 to-transparent" />
@@ -178,9 +179,10 @@ export default function ChangelogModal({
               {/* Arka Plan Görseli */}
               <div className="absolute top-2 inset-0 opacity-40 group-hover:opacity-60 group-hover:scale-105 transition-all duration-1000 pointer-events-none mix-blend-lighten">
                 <Image
-                  src="/kenan.png"
+                  src="/kenanu.png"
                   alt="Season 2 Background"
                   fill
+                  unoptimized
                   className="object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
