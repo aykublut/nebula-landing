@@ -370,6 +370,7 @@ export default function Home() {
                     src="/im.jpg"
                     alt="Background Texture"
                     fill
+                    unoptimized
                     className="object-cover rounded-[100px] blur-[2px]"
                   />
                 </div>
@@ -380,6 +381,7 @@ export default function Home() {
                     src="/im.jpg"
                     alt={REPO_OWNER}
                     fill
+                    unoptimized
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
