@@ -13,15 +13,81 @@ import {
   Film,
 } from "lucide-react";
 
+// --- DİL İÇERİĞİ ---
+const MODAL_CONTENT = {
+  tr: {
+    s1_badge: "MEVCUT SÜRÜM (v0.1.0)",
+    s1_title: "SEASON 1",
+    s1_sub: '"Fırtına Öncesi Sessizlik"',
+    s1_f1_title: "Hikayeye Giriş",
+    s1_f1_desc:
+      "Nebula evrenine ve karakterlere ilk bakış. Kim kimdir, tehlike nereden gelir? Sadece temel.",
+    s1_f2_title: "Sinematik Anlatım",
+    s1_f2_desc:
+      "Görsel roman formatında, çizgisel ve sakin bir akış. Atmosferin tadını çıkarın.",
+    s1_f3_title: "Tek Yönlü Bilet",
+    s1_f3_desc:
+      "İpler yönetmenin elinde. Seçimleriniz henüz kaderi değiştirmiyor, sadece sona hazırlıyor.",
+
+    s2_badge: "GELİŞTİRME AŞAMASINDA",
+    s2_title: "SEASON 2",
+    s2_sub: '"Kaos Teorisi & İnfaz"',
+    s2_f1_title: "Yeni Nesil Oynanış",
+    s2_f1_desc:
+      "Gerçek zamanlı 'Point & Click' çatışma simülasyonları ve Sniper görevleri.",
+    s2_f2_title: "Dinamik İhanet Motoru",
+    s2_f2_desc:
+      "Hikaye çizgisel değil; verdiğin her karar, finalde kimin tetiği çekeceğini belirleyecek.",
+    s2_f3_title: "Adrenalin & QTE",
+    s2_f3_desc:
+      "Refleks gerektiren anlık karar anları (Quick Time Events). Hataya yer yok.",
+    s2_quote:
+      '"Birinci sezonda masaya oturdunuz. İkinci sezonda o masayı devireceksiniz."',
+  },
+  en: {
+    s1_badge: "CURRENT VERSION (v0.1.0)",
+    s1_title: "SEASON 1",
+    s1_sub: '"Calm Before the Storm"',
+    s1_f1_title: "Intro to Story",
+    s1_f1_desc:
+      "First look at the Nebula universe and characters. Who is who? Just the basics.",
+    s1_f2_title: "Cinematic Narrative",
+    s1_f2_desc:
+      "Visual novel format with a linear and calm flow. Enjoy the atmosphere.",
+    s1_f3_title: "One Way Ticket",
+    s1_f3_desc:
+      "The director pulls the strings. Your choices don't change destiny yet, they just prepare for the end.",
+
+    s2_badge: "IN DEVELOPMENT",
+    s2_title: "SEASON 2",
+    s2_sub: '"Chaos Theory & Execution"',
+    s2_f1_title: "Next-Gen Gameplay",
+    s2_f1_desc:
+      "Real-time 'Point & Click' combat simulations and Sniper missions.",
+    s2_f2_title: "Dynamic Betrayal Engine",
+    s2_f2_desc:
+      "Story is not linear; every decision will determine who pulls the trigger in the finale.",
+    s2_f3_title: "Adrenaline & QTE",
+    s2_f3_desc:
+      "Instant decision moments requiring reflexes (Quick Time Events). No room for error.",
+    s2_quote:
+      '"In season one, you sat at the table. In season two, you will flip it over."',
+  },
+};
+
 interface ChangelogModalProps {
   isOpen: boolean;
   onClose: () => void;
+  lang: "tr" | "en"; // Dil prop'u eklendi
 }
 
 export default function ChangelogModal({
   isOpen,
   onClose,
+  lang,
 }: ChangelogModalProps) {
+  const t = MODAL_CONTENT[lang]; // Seçili dilin içeriğini al
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -63,45 +129,43 @@ export default function ChangelogModal({
                   fill
                   className="object-contain object-center"
                 />
-                {/* Mavi/Slate Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-slate-900/50 to-transparent" />
               </div>
 
               <div className="relative z-10 flex flex-col h-full">
-                {/* Etiket - ARTIK CYAN/MAVİ TONLARINDA */}
+                {/* Etiket */}
                 <div className="inline-flex items-center gap-2 px-2 py-0.5 mb-4 text-[9px] font-bold tracking-[0.2em] text-cyan-300 bg-cyan-950/40 border border-cyan-500/30 rounded-full w-fit shadow-[0_0_10px_-4px_rgba(34,211,238,0.3)]">
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
-                  MEVCUT SÜRÜM (v0.1.0)
+                  {t.s1_badge}
                 </div>
 
                 {/* Başlıklar */}
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-white mb-1 drop-shadow-md">
-                  SEASON 1
+                  {t.s1_title}
                 </h2>
                 <h3 className="text-sm font-light text-slate-400 mb-6 tracking-wide italic">
-                  "Fırtına Öncesi Sessizlik"
+                  {t.s1_sub}
                 </h3>
 
                 {/* Özellikler Listesi */}
                 <ul className="space-y-5">
                   <FeatureItem
-                    // İkonları ve stili "Blue/Cool" moda aldık
                     variant="cool"
                     icon={<BookOpen size={18} />}
-                    title="Hikayeye Giriş"
-                    desc="Nebula evrenine ve karakterlere ilk bakış. Kim kimdir, tehlike nereden gelir? Sadece temel."
+                    title={t.s1_f1_title}
+                    desc={t.s1_f1_desc}
                   />
                   <FeatureItem
                     variant="cool"
                     icon={<Film size={18} />}
-                    title="Sinematik Anlatım"
-                    desc="Görsel roman formatında, çizgisel ve sakin bir akış. Atmosferin tadını çıkarın."
+                    title={t.s1_f2_title}
+                    desc={t.s1_f2_desc}
                   />
                   <FeatureItem
                     variant="cool"
                     icon={<ArrowRight size={18} />}
-                    title="Tek Yönlü Bilet"
-                    desc="İpler yönetmenin elinde. Seçimleriniz henüz kaderi değiştirmiyor, sadece sona hazırlıyor."
+                    title={t.s1_f3_title}
+                    desc={t.s1_f3_desc}
                   />
                 </ul>
               </div>
@@ -127,15 +191,15 @@ export default function ChangelogModal({
                 {/* Etiket */}
                 <div className="inline-flex items-center gap-2 px-2 py-0.5 mb-4 text-[9px] font-bold tracking-[0.2em] text-amber-400 bg-amber-950/30 border border-amber-500/30 rounded-full animate-pulse w-fit shadow-[0_0_15px_-5px_rgba(245,158,11,0.5)]">
                   <Zap size={10} className="fill-amber-400" />
-                  GELİŞTİRME AŞAMASINDA
+                  {t.s2_badge}
                 </div>
 
                 {/* Başlıklar */}
                 <h2 className="text-3xl md:text-4xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-br from-amber-100 via-amber-400 to-amber-700 mb-1 drop-shadow-lg">
-                  SEASON 2
+                  {t.s2_title}
                 </h2>
                 <h3 className="text-sm font-medium text-amber-500/80 mb-6 tracking-wide uppercase">
-                  "Kaos Teorisi & İnfaz"
+                  {t.s2_sub}
                 </h3>
 
                 {/* Özellikler Listesi */}
@@ -143,20 +207,20 @@ export default function ChangelogModal({
                   <FeatureItem
                     variant="hot"
                     icon={<Gamepad2 size={18} />}
-                    title="Yeni Nesil Oynanış"
-                    desc="Gerçek zamanlı 'Point & Click' çatışma simülasyonları ve Sniper görevleri."
+                    title={t.s2_f1_title}
+                    desc={t.s2_f1_desc}
                   />
                   <FeatureItem
                     variant="hot"
                     icon={<Skull size={18} />}
-                    title="Dinamik İhanet Motoru"
-                    desc="Hikaye çizgisel değil; verdiğin her karar, finalde kimin tetiği çekeceğini belirleyecek."
+                    title={t.s2_f2_title}
+                    desc={t.s2_f2_desc}
                   />
                   <FeatureItem
                     variant="hot"
                     icon={<TrendingUp size={18} />}
-                    title="Adrenalin & QTE"
-                    desc="Refleks gerektiren anlık karar anları (Quick Time Events). Hataya yer yok."
+                    title={t.s2_f3_title}
+                    desc={t.s2_f3_desc}
                   />
                 </ul>
 
@@ -164,8 +228,7 @@ export default function ChangelogModal({
                 <div className="mt-auto pt-6">
                   <div className="p-3 bg-gradient-to-r from-amber-950/40 to-transparent border-l-2 border-amber-500 backdrop-blur-sm">
                     <p className="text-amber-200/80 text-xs italic font-serif leading-relaxed">
-                      "Birinci sezonda masaya oturdunuz. İkinci sezonda o masayı
-                      devireceksiniz."
+                      {t.s2_quote}
                     </p>
                   </div>
                 </div>
@@ -178,12 +241,12 @@ export default function ChangelogModal({
   );
 }
 
-// --- YARDIMCI BİLEŞEN (RENK TEMALARI EKLENDİ) ---
+// --- YARDIMCI BİLEŞEN ---
 function FeatureItem({
   icon,
   title,
   desc,
-  variant = "cool", // "cool" (Season 1) veya "hot" (Season 2)
+  variant = "cool",
 }: {
   icon: any;
   title: string;
