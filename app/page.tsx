@@ -95,7 +95,7 @@ export default function Home() {
           Finansal kaosun içinde kaybolmaya hazır mısın?{" "}
           <br className="hidden md:block" />
           <span className="text-zinc-100 font-medium">
-            Bu bir oyun değil, psikolojik bir test.
+            Büyük bir yükselişin küçük bir demosu.
           </span>
         </motion.p>
 
@@ -162,7 +162,7 @@ export default function Home() {
                     >
                       <ChevronRight className="w-3 h-3 text-zinc-700" /> {item}
                     </span>
-                  )
+                  ),
                 )}
               </div>
             </div>
