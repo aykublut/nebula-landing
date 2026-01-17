@@ -367,7 +367,7 @@ export default function Home() {
                 {/* --- FOTOĞRAF 1: ARKA PLAN DESENİ --- */}
                 <div className="absolute top-0 right-0 w-[400px] h-[400px] -mr-20 -mt-20 pointer-events-none opacity-[0.07] mix-blend-screen grayscale">
                   <Image
-                    src="/me.jpg"
+                    src="/im.jpg"
                     alt="Background Texture"
                     fill
                     className="object-cover rounded-[100px] blur-[2px]"
@@ -377,7 +377,7 @@ export default function Home() {
                 {/* --- FOTOĞRAF 2: PROFİL RESMİ --- */}
                 <div className="relative w-28 h-28 rounded-2xl border border-white/20 mb-6 shadow-2xl overflow-hidden z-10 group">
                   <Image
-                    src="/me.jpg"
+                    src="/im.jpg"
                     alt={REPO_OWNER}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
